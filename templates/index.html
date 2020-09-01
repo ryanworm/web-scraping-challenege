@@ -1,33 +1,87 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Costa Rica Weather</title>
+  <title>Mission to Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link   rel="stylesheet" href="mars_style.css">
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="jumbotron text-center">
-            <h2>Scraping Mars</h2>
-            <p><a class="btn btn-primary btn-lg" href="/scraper" role="button">Scrape Data</a></p>
+            <h1>Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
         </div>
-        <h3>Latest news from Mars</h3>
-        <h4>{{ mars.mars_title }}</h4>
-        <p>{{ mars.mars_ptext }}</p>
-        <br>
-        <!-- <h3>Images from Mars</h3> -->
-            <!-- <div class="row">
-                <div class="col-sm-8">
-                    <div class="box">
-                        <!-- <img src="{{mars.featured_img_url}}" alt="featured image"/> -->
-                        <!-- </div>
-                </div> -->
-            </div> -->
+ <!--Mars News  -->
+        <!-- <div class="row" id="mars-news">
+        <div class="col-md-12">
+            <div class="media">
+                <div class="media-body"> -->
+        <h2>Latest Mars News</h2>
+        <h4>{{ mars.news_title }}</h4>
+        <p>{{ mars.news_paragraph }}</p>
+        <br>          
+            <!-- </div>
+            </div>
+        </div>
+    </div> -->
+<!-- Mars Image -->
+    <!-- <div class="row">
+        <div class="col-md-8"> -->
+        <h2>Featured Mars Image</h2>
+        <!-- </div> -->
+            <div class="container">
+                <div class="row">
+                    <div class ="col-sm-8">
+                        <div class="box">
+                            <img src=" {{ mars.img }} " alt="featured image"/>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="box-1">
+                                <h4>Mars Facts</h4>
+                                <p> {{mars.facts | safe}} </p>
+                        </div>
+                    </div>
+                        
+                    </div>
+                </div>
+<!-- Mars Facts -->
+<h3 class=center>Mars Hemispheres</h3>
+    <div class="col-md-6 col-sm-12">
+            {% for hemisphere in mars.hemispheres %}
+            <div class="card">
+                <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="Mars Hemispheres">
+            <div class="caption">
+                <h3>{{hemisphere.title}}</h3>
+            </div>
+            </div>
+        </div>
+            {% endfor %}
+        </div>
     </div>
-       
+                <!-- <div class="col-sm-8">
+                        <h4>Mars Facts</h4>
+                        <p> {{mars.facts | safe}} </p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+<!-- Mars Hemispheres -->
+        <!-- {% for hemisphere in mars.hemispheres %}
+        <div class="col-md-6">
+            <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt=" Mars Hemispheres">
+        <div class="caption">
+            <h3>{{hemisphere.title}}</h3>
+        </div>
+        </div>
+    </div>
+        {% endfor %} -->
+    </div>
+</div>      
 </body>
 </html>
