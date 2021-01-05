@@ -22,5 +22,9 @@ A web-scraping app to auto-populate an html page with images and corresponding t
 * Pandas
 
 # How to use: 
+* Ensure you have the required packages installed locally
+* Clone this repository and run app.py locally
+* Click the "Mars Scraper" button
+
 The final project is a functional website which automatically scrapes and populates high resolution images and text about Mars. 
 
