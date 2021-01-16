@@ -16,8 +16,9 @@ A web-scraping app to auto-populate an html page with images and corresponding t
     * "Hemispheres"
     
     
-![table](./static/images/mars_facts.png)
 ![mars](./static/images/mars.png)
+<br>
+![table](./static/images/mars_facts.png)
 
 # Tools/Packages Used
 * Flask
