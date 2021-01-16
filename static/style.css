@@ -1,0 +1,12 @@
+.center h3{
+    text-align: center;
+}
+
+.box_1 div{
+    border-color: black;
+}
+
+.col-sm-6 img{
+    width: 50%;
+    height: auto;
+}
